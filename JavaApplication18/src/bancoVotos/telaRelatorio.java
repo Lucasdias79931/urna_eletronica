@@ -152,7 +152,6 @@ public class telaRelatorio extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel39 = new javax.swing.JLabel();
         jLabel40 = new javax.swing.JLabel();
-        Atualizar = new javax.swing.JButton();
         jLabel41 = new javax.swing.JLabel();
         Sair1 = new javax.swing.JButton();
 
@@ -688,15 +687,6 @@ public class telaRelatorio extends javax.swing.JFrame {
         jLabel40.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel40.setText("Deputado Estadual");
 
-        Atualizar.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        Atualizar.setText("Atualizar");
-        Atualizar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        Atualizar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AtualizarActionPerformed(evt);
-            }
-        });
-
         jLabel41.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel41.setText("Presidente");
 
@@ -745,13 +735,8 @@ public class telaRelatorio extends javax.swing.JFrame {
                                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(84, 84, 84)
-                                .addComponent(Atualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addComponent(Sair1, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap(231, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                    .addContainerGap(620, Short.MAX_VALUE)
-                    .addComponent(Sair1, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(341, 341, 341)))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -785,13 +770,8 @@ public class telaRelatorio extends javax.swing.JFrame {
                         .addContainerGap())
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Atualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(95, 95, 95))))
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                    .addContainerGap(535, Short.MAX_VALUE)
-                    .addComponent(Sair1, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(7, 7, 7)))
+                        .addComponent(Sair1, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(90, 90, 90))))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -813,11 +793,6 @@ public class telaRelatorio extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void AtualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AtualizarActionPerformed
-                // TODO add your handling code here:
-           exibir();
-    }//GEN-LAST:event_AtualizarActionPerformed
 
     private void KatiaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_KatiaKeyPressed
         // TODO add your handling code here:
@@ -841,6 +816,7 @@ public class telaRelatorio extends javax.swing.JFrame {
 
     private void Sair1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Sair1ActionPerformed
         // TODO add your handling code here:
+        telaRelatorio.this.dispose();
     }//GEN-LAST:event_Sair1ActionPerformed
 
     /**
@@ -885,7 +861,6 @@ public class telaRelatorio extends javax.swing.JFrame {
     private javax.swing.JLabel Alex2;
     private javax.swing.JLabel Alex3;
     private javax.swing.JLabel Alex4;
-    private javax.swing.JButton Atualizar;
     private javax.swing.JLabel Katia;
     private javax.swing.JLabel Katia1;
     private javax.swing.JLabel Katia2;

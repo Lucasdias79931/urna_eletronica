@@ -112,6 +112,7 @@ public class votar {
                             presidente.setVisible(true);
                             if(presidente.getconcluir()==1){
                                 tela=true;
+                               
                             }
                         } 
                      
@@ -126,6 +127,7 @@ public class votar {
     }
      int rela=JOptionPane.showConfirmDialog(null,"YES para ver relatório","Mesário",1);
     if(rela==0){
+        relatorio.exibir();
         relatorio.setVisible(true);
     }
     }
