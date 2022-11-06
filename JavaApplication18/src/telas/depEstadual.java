@@ -70,6 +70,7 @@ public class depEstadual extends javax.swing.JFrame {
         auxBranco=false;
         numNulo=false;
         numBranco=false;
+        concluir=0;
         
         for(int i=0;i<qVotos.length;i++){
             qVotos[i]=0;
@@ -81,6 +82,27 @@ public class depEstadual extends javax.swing.JFrame {
         Nome.setText("");
         nomeCand.setText("");
         AUX.setText("");
+    }
+    
+     public void inicializar2(){
+        Partido.setText("");
+        nomePartido.setText("");
+        Nome.setText("");
+        nomeCand.setText("");
+        AUX.setText("");
+        
+        auxBranco=false;
+        numNulo=false;
+        numBranco=false;
+        concluir=0;
+        aux=0;
+        partido=false;
+        
+        num1.setText("");
+        num2.setText("");
+        num3.setText("");
+        num4.setText("");
+        num5.setText("");
     }
     
    
@@ -142,7 +164,7 @@ public class depEstadual extends javax.swing.JFrame {
      public depEstadual() {
         initComponents();
         inicializar();
-        concluir=0;
+        
         
        
 

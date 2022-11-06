@@ -76,7 +76,7 @@ public class eleitor {
             }
         }
         
-        if(w==situacao.length-1){
+        if(w==situacao.length){
             j=true;
         }
         

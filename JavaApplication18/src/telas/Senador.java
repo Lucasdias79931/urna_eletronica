@@ -72,6 +72,26 @@ public class Senador extends javax.swing.JFrame {
         Nome.setText("");
         nomeCand.setText("");
         AUX.setText("");
+        concluir=0;
+    }
+    
+    public void inicializar2(){
+        Partido.setText("");
+        nomePartido.setText("");
+        Nome.setText("");
+        nomeCand.setText("");
+        AUX.setText("");
+        
+        auxBranco=false;
+        numNulo=false;
+        numBranco=false;
+        concluir=0;
+        aux=0;
+        partido=false;
+        
+        num1.setText("");
+        num2.setText("");
+        num3.setText("");
     }
     
    
@@ -127,7 +147,7 @@ public class Senador extends javax.swing.JFrame {
      public Senador() {
         initComponents();
         inicializar();
-        concluir=0;
+        
         
         
     }

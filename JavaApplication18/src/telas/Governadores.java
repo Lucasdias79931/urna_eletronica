@@ -69,6 +69,7 @@ public class Governadores extends javax.swing.JFrame {
         auxBranco=false;
         numNulo=false;
         numBranco=false;
+        concluir=0;
         
         for(int i=0;i<qVotos.length;i++){
             qVotos[i]=0;
@@ -80,6 +81,24 @@ public class Governadores extends javax.swing.JFrame {
         Nome.setText("");
         nomeCand.setText("");
         AUX.setText("");
+    }
+     public void inicializar2(){
+        Partido.setText("");
+        nomePartido.setText("");
+        Nome.setText("");
+        nomeCand.setText("");
+        AUX.setText("");
+        
+        auxBranco=false;
+        numNulo=false;
+        numBranco=false;
+        concluir=0;
+        aux=0;
+        partido=false;
+        
+        num1.setText("");
+        num2.setText("");
+        
     }
     
    
@@ -141,7 +160,7 @@ public class Governadores extends javax.swing.JFrame {
      public Governadores() {
         initComponents();
         inicializar();
-        concluir=0;
+        
         
        
 

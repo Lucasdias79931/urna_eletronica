@@ -22,7 +22,12 @@ public class votar {
      public static void main(String[] args) {
         eleitor Eleitor = new eleitor();
         
-        telaRelatorio relatorio = new telaRelatorio();
+        
+        Senador votacao = new Senador();
+        depFe deputadoFe =new depFe();
+        depEstadual depEstadual = new depEstadual();
+        Governadores governadores = new Governadores();
+        Presidente presidente = new Presidente();
         
         
         boolean existencia=false;//verifica a existência do Eleitor
@@ -42,11 +47,7 @@ public class votar {
          
             boolean tela=true;
               
-            Senador votacao = new Senador();
-            depFe deputadoFe =new depFe();
-            depEstadual depEstadual = new depEstadual();
-            Governadores governadores = new Governadores();
-            Presidente presidente = new Presidente();
+            
         
             nomeEleitor=JOptionPane.showInputDialog(null,"Nome do Eleitor","",1);
             tituloEleitor=JOptionPane.showInputDialog(null,"titulo de Eleitor","",1);
@@ -73,11 +74,11 @@ public class votar {
                             votacao.setVisible(true);
                             if(votacao.getconcluir()==1){ 
                                 tela=false;
-                                relatorio.votos("senador", votacao.getsenador(), votacao.getqVotos(), votacao.getqNulo(), votacao.getBranco());
                               
                             }
                             
                         }
+                        votacao.inicializar2(); //reseta alguns atributos da tela
                         
                    
                    // voto para Deputado Federal
@@ -87,6 +88,7 @@ public class votar {
                                 tela=true;
                             }
                         }
+                        deputadoFe.inicializar2(); //reseta alguns atributos da tela
                     
                    // voto para Deputado Estadual
                         tela=false;
@@ -96,7 +98,8 @@ public class votar {
                                 tela=true;
                             }
                         }
-                  
+                        depEstadual.inicializar2(); //reseta alguns atributos da tela
+                     
                     //voto para Governador
                         tela=false;
                         while(tela==false){
@@ -105,6 +108,7 @@ public class votar {
                             tela=true;
                             }
                         }
+                        governadores.inicializar2(); //reseta alguns atributos da tela
                     
                    // voto para Presidente
                         tela=false;
@@ -115,6 +119,7 @@ public class votar {
                                
                             }
                         } 
+                        presidente.inicializar2(); //reseta alguns atributos da tela
                      
                     }else{
                         JOptionPane.showMessageDialog(null,"Eleitor já Efetuo a Votação","",1);
@@ -125,8 +130,13 @@ public class votar {
             iniciar=false;
         }
     }
-     int rela=JOptionPane.showConfirmDialog(null,"YES para ver relatório","Mesário",1);
+    
+    int rela=JOptionPane.showConfirmDialog(null,"YES para ver relatório","Mesário",1);
     if(rela==0){
+        telaRelatorio relatorio = new telaRelatorio();
+        relatorio.votos("senador", votacao.getsenador(), votacao.getqVotos(), votacao.getqNulo(), votacao.getBranco());
+        relatorio.votos("presidente",presidente.getpresidente(),presidente.getqVotos(),presidente.getqNulo(),presidente.getBranco());
+        
         relatorio.exibir();
         relatorio.setVisible(true);
     }

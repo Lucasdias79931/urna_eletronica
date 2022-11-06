@@ -605,13 +605,13 @@
                       </Group>
                       <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="Alex2" alignment="0" min="-2" pref="79" max="-2" attributes="0"/>
-                          <Component id="Luiz2" alignment="0" min="-2" pref="79" max="-2" attributes="0"/>
-                          <Component id="nuloSenadores2" alignment="0" min="-2" pref="79" max="-2" attributes="0"/>
-                          <Component id="brancoSenadores2" alignment="0" min="-2" pref="79" max="-2" attributes="0"/>
-                          <Component id="Sandra2" alignment="0" min="-2" pref="79" max="-2" attributes="0"/>
-                          <Component id="Rita2" alignment="0" min="-2" pref="79" max="-2" attributes="0"/>
-                          <Component id="Katia2" alignment="0" min="-2" pref="79" max="-2" attributes="0"/>
+                          <Component id="Luzia" alignment="0" min="-2" pref="79" max="-2" attributes="0"/>
+                          <Component id="Rogerio" alignment="0" min="-2" pref="79" max="-2" attributes="0"/>
+                          <Component id="NulosPresida" alignment="0" min="-2" pref="79" max="-2" attributes="0"/>
+                          <Component id="BrancosPresida" alignment="0" min="-2" pref="79" max="-2" attributes="0"/>
+                          <Component id="Fernanda" alignment="0" min="-2" pref="79" max="-2" attributes="0"/>
+                          <Component id="Wellington" alignment="0" min="-2" pref="79" max="-2" attributes="0"/>
+                          <Component id="Agildo" alignment="0" min="-2" pref="79" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace pref="92" max="32767" attributes="0"/>
                   </Group>
@@ -623,17 +623,17 @@
                       <EmptySpace max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jLabel18" alignment="1" min="-2" max="-2" attributes="0"/>
-                          <Component id="Katia2" alignment="1" min="-2" pref="21" max="-2" attributes="0"/>
+                          <Component id="Agildo" alignment="1" min="-2" pref="21" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jLabel20" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="Sandra2" alignment="0" min="-2" pref="21" max="-2" attributes="0"/>
+                          <Component id="Fernanda" alignment="0" min="-2" pref="21" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" attributes="0">
                           <Component id="jLabel19" alignment="1" min="-2" max="-2" attributes="0"/>
-                          <Component id="Rita2" alignment="1" min="-2" pref="21" max="-2" attributes="0"/>
+                          <Component id="Wellington" alignment="1" min="-2" pref="21" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -647,13 +647,13 @@
                               <Component id="jLabel24" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" attributes="0">
-                              <Component id="Luiz2" min="-2" pref="21" max="-2" attributes="0"/>
+                              <Component id="Rogerio" min="-2" pref="21" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="Alex2" min="-2" pref="21" max="-2" attributes="0"/>
+                              <Component id="Luzia" min="-2" pref="21" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="nuloSenadores2" min="-2" pref="21" max="-2" attributes="0"/>
+                              <Component id="NulosPresida" min="-2" pref="21" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="brancoSenadores2" min="-2" pref="21" max="-2" attributes="0"/>
+                              <Component id="BrancosPresida" min="-2" pref="21" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
@@ -718,7 +718,7 @@
                 <Property name="text" type="java.lang.String" value="Brancos"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="Katia2">
+            <Component class="javax.swing.JLabel" name="Agildo">
               <Properties>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
@@ -727,10 +727,10 @@
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="Katia2KeyPressed"/>
+                <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="AgildoKeyPressed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JLabel" name="Sandra2">
+            <Component class="javax.swing.JLabel" name="Fernanda">
               <Properties>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
@@ -739,7 +739,7 @@
                 </Property>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="Rita2">
+            <Component class="javax.swing.JLabel" name="Wellington">
               <Properties>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
@@ -748,7 +748,7 @@
                 </Property>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="Luiz2">
+            <Component class="javax.swing.JLabel" name="Rogerio">
               <Properties>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
@@ -757,7 +757,7 @@
                 </Property>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="Alex2">
+            <Component class="javax.swing.JLabel" name="Luzia">
               <Properties>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
@@ -766,7 +766,7 @@
                 </Property>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="brancoSenadores2">
+            <Component class="javax.swing.JLabel" name="BrancosPresida">
               <Properties>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
@@ -775,7 +775,7 @@
                 </Property>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="nuloSenadores2">
+            <Component class="javax.swing.JLabel" name="NulosPresida">
               <Properties>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
