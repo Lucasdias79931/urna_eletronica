@@ -23,7 +23,7 @@ public class votar {
         eleitor Eleitor = new eleitor();
         
         
-        Senador votacao = new Senador();
+        Senador senado = new Senador();
         depFe deputadoFe =new depFe();
         depEstadual depEstadual = new depEstadual();
         Governadores governadores = new Governadores();
@@ -71,14 +71,14 @@ public class votar {
                       
                       /*voto para senador*/
                         while(tela==true){
-                            votacao.setVisible(true);
-                            if(votacao.getconcluir()==1){ 
+                            senado.setVisible(true);
+                            if(senado.getconcluir()==1){ 
                                 tela=false;
                               
                             }
                             
                         }
-                        votacao.inicializar2(); //reseta alguns atributos da tela
+                        senado.inicializar2(); //reseta alguns atributos da tela
                         
                    
                    // voto para Deputado Federal
@@ -134,8 +134,13 @@ public class votar {
     int rela=JOptionPane.showConfirmDialog(null,"YES para ver relatório","Mesário",1);
     if(rela==0){
         telaRelatorio relatorio = new telaRelatorio();
-        relatorio.votos("senador", votacao.getsenador(), votacao.getqVotos(), votacao.getqNulo(), votacao.getBranco());
+       
+        relatorio.votos("senador", senado.getsenador(), senado.getqVotos(), senado.getqNulo(), senado.getBranco());
         relatorio.votos("presidente",presidente.getpresidente(),presidente.getqVotos(),presidente.getqNulo(),presidente.getBranco());
+        relatorio.votos("deputadoFe", deputadoFe.getDeputadoFe(), deputadoFe.getqVotos(), deputadoFe.getqNulo(), deputadoFe.getBranco());
+        relatorio.votos("deputadoEs",depEstadual.getDeputadoEs(),depEstadual.getqVotos(),depEstadual.getqNulo(),depEstadual.getBranco());
+        relatorio.votos("governador", governadores.getGovernador(), governadores.getqVotos(), governadores.getqNulo(), governadores.getBranco());
+
         
         relatorio.exibir();
         relatorio.setVisible(true);

@@ -5,11 +5,7 @@
 package bancoVotos;
 
 import javax.swing.JOptionPane;
-import telas.Governadores;
-import telas.Presidente;
-import telas.Senador;
-import telas.depEstadual;
-import telas.depFe;
+
 
 /**
  *
@@ -17,23 +13,38 @@ import telas.depFe;
  */
 public class telaRelatorio extends javax.swing.JFrame {
             
-    Senador senado = new Senador();
+   
     
     
-    /*Tudo sobre senador*/
+    // Tudo sobre senador
     private  final String[] senador= {"Alex","Luiz","Rita","Sandra","Katia"} ;
     private  int[] senadorVotos={0,0,0,0,0}; 
     private int brancoSenador=0;
     private int nuloSenador=0;
     
+    // Tudo sovre presidente
     private  String[] presidente={"Agildo da Hora","Wellington Tenda","Rogério 666","Fernanda Tiktoker","Luzia Pontual"} ;
     private int[] presidenteVotos={0,0,0,0,0};
     private int brancoPresidente=0;
     private int nuloPresidente=0;
     
-  
+    // Tudo sebre governadores
+    private  String[] governador={"Marcos","Ira","Cristiane","Manoel","Leandro"} ;
+    private int[] govVotos={0,0,0,0,0};
+    private int brancoGov=0;
+    private int nuloGov=0;
     
-   
+    // Tudo sobre deputado Estadual
+    private  String[] depEstadual={"juliana","Ana","Carla","Maria","Manoela"};
+    private int[] depEsVotos={0,0,0,0,0};
+    private int brancoDepEs=0;
+    private int nuloDepEs=0;
+    
+    // Tudo sobre deputado Federal
+     private  String[] depFederal={"Marcio","Roger","Brito","Ney","Bob Marley"} ;
+    private int[] depFeVotos={0,0,0,0,0};
+    private int brancoDeFe=0;
+    private int nuloDepFe=0;
    
     
     /*Atualizar números de votos*/
@@ -62,6 +73,36 @@ public class telaRelatorio extends javax.swing.JFrame {
                         brancoPresidente+=branco;
                         nuloPresidente+=nulo;
                 break;
+                case "governador":
+                        for(int i=0;i<5;i++){
+                            if(nomeCandidato[i].equals(governador[i])){
+                                govVotos[i]+=voto[i];
+                                
+                            }
+                        }
+                        brancoGov+=branco;
+                        nuloGov+=nulo;
+                break;
+                case "deputadoFe":
+                        for(int i=0;i<5;i++){
+                            if(nomeCandidato[i].equals(depFederal[i])){
+                                depFeVotos[i]+=voto[i];
+                                
+                            }
+                        }
+                        brancoDeFe+=branco;
+                        nuloDepFe+=nulo;
+                break;
+                case "deputadoEs":
+                        for(int i=0;i<5;i++){
+                            if(nomeCandidato[i].equals(depEstadual[i])){
+                                depEsVotos[i]+=voto[i];
+                                
+                            }
+                        }
+                        brancoDepEs+=branco;
+                        nuloDepEs+=nulo;
+                break;
                     
             }
      
@@ -84,6 +125,30 @@ public class telaRelatorio extends javax.swing.JFrame {
         Luzia.setText(String.valueOf(presidenteVotos[4]));
         NulosPresida.setText(String.valueOf(nuloPresidente));
         BrancosPresida.setText(String.valueOf(brancoPresidente));
+        
+        Marcos.setText(String.valueOf(govVotos[0]));
+        Ira.setText(String.valueOf(govVotos[1]));
+        Cristiane.setText(String.valueOf(govVotos[2]));
+        Manoel.setText(String.valueOf(govVotos[3]));
+        Leandro.setText(String.valueOf(govVotos[4]));
+        NulosGov.setText(String.valueOf(nuloGov));
+        BrancosGov.setText(String.valueOf(brancoGov));
+        
+        Juliana.setText(String.valueOf(depEsVotos[0]));
+        Ana.setText(String.valueOf(depEsVotos[1]));
+        Carla.setText(String.valueOf(depEsVotos[2]));
+        Maria.setText(String.valueOf(depEsVotos[3]));
+        Manoela.setText(String.valueOf(depEsVotos[4]));
+        NulosDepEs.setText(String.valueOf(nuloDepEs));
+        BrancosDepEs.setText(String.valueOf(brancoDepEs));
+        
+        Marcio.setText(String.valueOf(depFeVotos[0]));
+        Roger.setText(String.valueOf(depFeVotos[1]));
+        Brito.setText(String.valueOf(depFeVotos[2]));
+        Ney.setText(String.valueOf(depFeVotos[3]));
+        Manoela.setText(String.valueOf(depFeVotos[4]));
+        NulosDepFe.setText(String.valueOf(nuloDepFe));
+        BrancosDepFe.setText(String.valueOf(brancoDeFe));
      
     }
     
@@ -129,13 +194,13 @@ public class telaRelatorio extends javax.swing.JFrame {
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
-        Katia1 = new javax.swing.JLabel();
-        Sandra1 = new javax.swing.JLabel();
-        Rita1 = new javax.swing.JLabel();
-        Luiz1 = new javax.swing.JLabel();
-        Alex1 = new javax.swing.JLabel();
-        brancoSenadores1 = new javax.swing.JLabel();
-        nuloSenadores1 = new javax.swing.JLabel();
+        Marcos = new javax.swing.JLabel();
+        Ira = new javax.swing.JLabel();
+        Cristiane = new javax.swing.JLabel();
+        Manoel = new javax.swing.JLabel();
+        Leandro = new javax.swing.JLabel();
+        BrancosGov = new javax.swing.JLabel();
+        NulosGov = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jLabel18 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
@@ -159,13 +224,13 @@ public class telaRelatorio extends javax.swing.JFrame {
         jLabel29 = new javax.swing.JLabel();
         jLabel30 = new javax.swing.JLabel();
         jLabel31 = new javax.swing.JLabel();
-        Katia3 = new javax.swing.JLabel();
-        Sandra3 = new javax.swing.JLabel();
-        Rita3 = new javax.swing.JLabel();
-        Luiz3 = new javax.swing.JLabel();
-        Alex3 = new javax.swing.JLabel();
-        brancoSenadores3 = new javax.swing.JLabel();
-        nuloSenadores3 = new javax.swing.JLabel();
+        Marcio = new javax.swing.JLabel();
+        Roger = new javax.swing.JLabel();
+        Brito = new javax.swing.JLabel();
+        Ney = new javax.swing.JLabel();
+        BobMarley = new javax.swing.JLabel();
+        BrancosDepFe = new javax.swing.JLabel();
+        NulosDepFe = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
         jLabel32 = new javax.swing.JLabel();
         jLabel33 = new javax.swing.JLabel();
@@ -174,13 +239,13 @@ public class telaRelatorio extends javax.swing.JFrame {
         jLabel36 = new javax.swing.JLabel();
         jLabel37 = new javax.swing.JLabel();
         jLabel38 = new javax.swing.JLabel();
-        Katia4 = new javax.swing.JLabel();
-        Sandra4 = new javax.swing.JLabel();
-        Rita4 = new javax.swing.JLabel();
-        Luiz4 = new javax.swing.JLabel();
-        Alex4 = new javax.swing.JLabel();
-        brancoSenadores4 = new javax.swing.JLabel();
-        nuloSenadores4 = new javax.swing.JLabel();
+        Juliana = new javax.swing.JLabel();
+        Ana = new javax.swing.JLabel();
+        Carla = new javax.swing.JLabel();
+        Maria = new javax.swing.JLabel();
+        Manoela = new javax.swing.JLabel();
+        BrancosDepEs = new javax.swing.JLabel();
+        NulosDepEs = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel39 = new javax.swing.JLabel();
         jLabel40 = new javax.swing.JLabel();
@@ -325,24 +390,24 @@ public class telaRelatorio extends javax.swing.JFrame {
         jLabel17.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel17.setText("Brancos");
 
-        Katia1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        Katia1.addKeyListener(new java.awt.event.KeyAdapter() {
+        Marcos.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        Marcos.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                Katia1KeyPressed(evt);
+                MarcosKeyPressed(evt);
             }
         });
 
-        Sandra1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        Ira.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        Rita1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        Cristiane.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        Luiz1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        Manoel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        Alex1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        Leandro.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        brancoSenadores1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        BrancosGov.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        nuloSenadores1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        NulosGov.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -360,13 +425,13 @@ public class telaRelatorio extends javax.swing.JFrame {
                     .addComponent(jLabel15))
                 .addGap(28, 28, 28)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Alex1, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Luiz1, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(nuloSenadores1, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(brancoSenadores1, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Sandra1, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Rita1, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Katia1, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Leandro, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Manoel, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(NulosGov, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BrancosGov, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Ira, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Cristiane, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Marcos, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(92, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
@@ -375,15 +440,15 @@ public class telaRelatorio extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel11, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(Katia1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Marcos, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel13)
-                    .addComponent(Sandra1, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Ira, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel12)
-                    .addComponent(Rita1, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Cristiane, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(7, 7, 7)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
@@ -395,13 +460,13 @@ public class telaRelatorio extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel17))
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(Luiz1, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Manoel, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Alex1, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Leandro, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(nuloSenadores1, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(NulosGov, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(brancoSenadores1, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(BrancosGov, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(20, 20, 20))
         );
 
@@ -531,24 +596,24 @@ public class telaRelatorio extends javax.swing.JFrame {
         jLabel31.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel31.setText("Brancos");
 
-        Katia3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        Katia3.addKeyListener(new java.awt.event.KeyAdapter() {
+        Marcio.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        Marcio.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                Katia3KeyPressed(evt);
+                MarcioKeyPressed(evt);
             }
         });
 
-        Sandra3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        Roger.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        Rita3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        Brito.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        Luiz3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        Ney.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        Alex3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        BobMarley.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        brancoSenadores3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        BrancosDepFe.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        nuloSenadores3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        NulosDepFe.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -566,13 +631,13 @@ public class telaRelatorio extends javax.swing.JFrame {
                     .addComponent(jLabel27))
                 .addGap(22, 22, 22)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Sandra3, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Rita3, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Katia3, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Alex3, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Luiz3, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(nuloSenadores3, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(brancoSenadores3, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Roger, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Brito, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Marcio, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BobMarley, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Ney, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(NulosDepFe, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BrancosDepFe, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
@@ -580,32 +645,32 @@ public class telaRelatorio extends javax.swing.JFrame {
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Katia3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Marcio, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel25, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel27)
-                    .addComponent(Sandra3, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Roger, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel26)
-                    .addComponent(Rita3, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Brito, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel29)
-                    .addComponent(Luiz3, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Ney, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel28)
-                    .addComponent(Alex3, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(BobMarley, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel30)
-                    .addComponent(nuloSenadores3, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(NulosDepFe, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel31)
-                    .addComponent(brancoSenadores3, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(BrancosDepFe, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(21, 21, 21))
         );
 
@@ -632,24 +697,24 @@ public class telaRelatorio extends javax.swing.JFrame {
         jLabel38.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel38.setText("Brancos");
 
-        Katia4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        Katia4.addKeyListener(new java.awt.event.KeyAdapter() {
+        Juliana.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        Juliana.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                Katia4KeyPressed(evt);
+                JulianaKeyPressed(evt);
             }
         });
 
-        Sandra4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        Ana.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        Rita4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        Carla.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        Luiz4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        Maria.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        Alex4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        Manoela.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        brancoSenadores4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        BrancosDepEs.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        nuloSenadores4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        NulosDepEs.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -667,13 +732,13 @@ public class telaRelatorio extends javax.swing.JFrame {
                     .addComponent(jLabel34))
                 .addGap(22, 22, 22)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Sandra4, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Rita4, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Katia4, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Alex4, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Luiz4, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(nuloSenadores4, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(brancoSenadores4, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Ana, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Carla, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Juliana, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Manoela, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Maria, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(NulosDepEs, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BrancosDepEs, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
@@ -681,32 +746,32 @@ public class telaRelatorio extends javax.swing.JFrame {
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addContainerGap(32, Short.MAX_VALUE)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Katia4, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Juliana, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel32))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel34)
-                    .addComponent(Sandra4, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Ana, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel33)
-                    .addComponent(Rita4, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Carla, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel36)
-                    .addComponent(Luiz4, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Maria, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel35)
-                    .addComponent(Alex4, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Manoela, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel37)
-                    .addComponent(nuloSenadores4, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(NulosDepEs, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel38)
-                    .addComponent(brancoSenadores4, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(BrancosDepEs, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(21, 21, 21))
         );
 
@@ -830,21 +895,21 @@ public class telaRelatorio extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_KatiaKeyPressed
 
-    private void Katia1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Katia1KeyPressed
+    private void MarcosKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_MarcosKeyPressed
         // TODO add your handling code here:
-    }//GEN-LAST:event_Katia1KeyPressed
+    }//GEN-LAST:event_MarcosKeyPressed
 
     private void AgildoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_AgildoKeyPressed
         // TODO add your handling code here:
     }//GEN-LAST:event_AgildoKeyPressed
 
-    private void Katia3KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Katia3KeyPressed
+    private void MarcioKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_MarcioKeyPressed
         // TODO add your handling code here:
-    }//GEN-LAST:event_Katia3KeyPressed
+    }//GEN-LAST:event_MarcioKeyPressed
 
-    private void Katia4KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Katia4KeyPressed
+    private void JulianaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_JulianaKeyPressed
         // TODO add your handling code here:
-    }//GEN-LAST:event_Katia4KeyPressed
+    }//GEN-LAST:event_JulianaKeyPressed
 
     private void Sair1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Sair1ActionPerformed
         // TODO add your handling code here:
@@ -890,36 +955,39 @@ public class telaRelatorio extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Agildo;
     private javax.swing.JLabel Alex;
-    private javax.swing.JLabel Alex1;
-    private javax.swing.JLabel Alex3;
-    private javax.swing.JLabel Alex4;
+    private javax.swing.JLabel Ana;
+    private javax.swing.JLabel BobMarley;
+    private javax.swing.JLabel BrancosDepEs;
+    private javax.swing.JLabel BrancosDepFe;
+    private javax.swing.JLabel BrancosGov;
     private javax.swing.JLabel BrancosPresida;
+    private javax.swing.JLabel Brito;
+    private javax.swing.JLabel Carla;
+    private javax.swing.JLabel Cristiane;
     private javax.swing.JLabel Fernanda;
+    private javax.swing.JLabel Ira;
+    private javax.swing.JLabel Juliana;
     private javax.swing.JLabel Katia;
-    private javax.swing.JLabel Katia1;
-    private javax.swing.JLabel Katia3;
-    private javax.swing.JLabel Katia4;
+    private javax.swing.JLabel Leandro;
     private javax.swing.JLabel Luiz;
-    private javax.swing.JLabel Luiz1;
-    private javax.swing.JLabel Luiz3;
-    private javax.swing.JLabel Luiz4;
     private javax.swing.JLabel Luzia;
+    private javax.swing.JLabel Manoel;
+    private javax.swing.JLabel Manoela;
+    private javax.swing.JLabel Marcio;
+    private javax.swing.JLabel Marcos;
+    private javax.swing.JLabel Maria;
+    private javax.swing.JLabel Ney;
+    private javax.swing.JLabel NulosDepEs;
+    private javax.swing.JLabel NulosDepFe;
+    private javax.swing.JLabel NulosGov;
     private javax.swing.JLabel NulosPresida;
     private javax.swing.JLabel Rita;
-    private javax.swing.JLabel Rita1;
-    private javax.swing.JLabel Rita3;
-    private javax.swing.JLabel Rita4;
+    private javax.swing.JLabel Roger;
     private javax.swing.JLabel Rogerio;
     private javax.swing.JButton Sair1;
     private javax.swing.JLabel Sandra;
-    private javax.swing.JLabel Sandra1;
-    private javax.swing.JLabel Sandra3;
-    private javax.swing.JLabel Sandra4;
     private javax.swing.JLabel Wellington;
     private javax.swing.JLabel brancoSenadores;
-    private javax.swing.JLabel brancoSenadores1;
-    private javax.swing.JLabel brancoSenadores3;
-    private javax.swing.JLabel brancoSenadores4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -968,8 +1036,5 @@ public class telaRelatorio extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JLabel nuloSenadores;
-    private javax.swing.JLabel nuloSenadores1;
-    private javax.swing.JLabel nuloSenadores3;
-    private javax.swing.JLabel nuloSenadores4;
     // End of variables declaration//GEN-END:variables
 }

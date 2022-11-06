@@ -14,7 +14,7 @@ import javax.swing.JOptionPane;
 public class Governadores extends javax.swing.JFrame {
     
     //nome, número e quantidade de voto dos candidatos
-    private  String[] governador={"Marcos","irâ","Cristiane","Manoel","Leandro"} ;
+    private  String[] governador={"Marcos","Ira","Cristiane","Manoel","Leandro"} ;
     private int[] num={11,12,13,14,15};
     private int[] qVotos=new int[5];
     
@@ -44,7 +44,7 @@ public class Governadores extends javax.swing.JFrame {
    
     /*-------------------------------------------------------------------------*/
     
-    public String[] getsenador(){
+    public String[] getGovernador(){
         return governador;
     }
     

@@ -45,7 +45,7 @@ public class depEstadual extends javax.swing.JFrame {
    
     /*-------------------------------------------------------------------------*/
     
-    public String[] getsenador(){
+    public String[] getDeputadoEs(){
         return depEstadual;
     }
     
