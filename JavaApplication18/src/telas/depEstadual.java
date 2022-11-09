@@ -15,7 +15,7 @@ public class depEstadual extends javax.swing.JFrame {
     
     //nome, número e quantidade de voto dos candidatos
     private  String[] depEstadual={"juliana","Ana","Carla","Maria","Manoela"};
-    private int[] num={11001,12002,13003,14004,15005};
+    private int[] num={11000,12000,13000,14000,15000};
     private int[] qVotos=new int[5];
       
      

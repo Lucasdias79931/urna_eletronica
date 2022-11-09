@@ -15,7 +15,7 @@ public class depFe extends javax.swing.JFrame {
     
     //nome, número e quantidade de voto dos candidatos
     private  String[] depFederal={"Marcio","Roger","Brito","Ney","Bob Marley"};
-    private int[] num={1101,1202,1303,1404,1505};
+    private int[] num={1100,1200,1300,1400,1500};
     private int[] qVotos=new int[5];
       
     //nome e número dos partidos
