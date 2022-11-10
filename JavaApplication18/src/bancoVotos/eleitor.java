@@ -66,7 +66,7 @@ public class eleitor {
         return test;
     }
     
-    
+    /*
     public boolean verificaSituacoes(){
         int w=0;
         boolean j=false;
@@ -82,5 +82,5 @@ public class eleitor {
         
         return j;
     }
-
+*/
 }

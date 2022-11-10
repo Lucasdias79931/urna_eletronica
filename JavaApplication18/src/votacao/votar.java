@@ -4,7 +4,9 @@
  */
 package votacao;
 
-
+import mesario.mesarioPrincipal;
+import mesario.inserirDados;
+import mesario.mesarioSec;
 import bancoVotos.eleitor;
 import telas.depFe;
 import telas.Presidente;
@@ -29,6 +31,9 @@ public class votar {
         Governadores governadores = new Governadores();
         Presidente presidente = new Presidente();
         
+        telaRelatorio relatorio = new telaRelatorio();
+        mesarioPrincipal mesario = new mesarioPrincipal();
+        mesarioSec mesaSec = new mesarioSec();
         
         boolean existencia=false;//verifica a existência do Eleitor
         String nomeEleitor="";  //Nome do eleitor
@@ -47,18 +52,36 @@ public class votar {
          
             boolean tela=true;
               
+            while(tela=true){
+                mesario.setVisible(true);
+                
+                if(mesario.getSair()==true){
+                    iniciar=false;
+                    break;
+                }
+                
+                if(mesario.getVotar()==true){
+                   break;
+                }
+                
+                
+            }
+           
+            tela=true;
             
+             while(tela==true&&mesario.getSair()==false){
+                nomeEleitor=JOptionPane.showInputDialog(null,"Nome do Eleitor","",1);
+                tituloEleitor=JOptionPane.showInputDialog(null,"titulo de Eleitor","",1);
         
-            nomeEleitor=JOptionPane.showInputDialog(null,"Nome do Eleitor","",1);
-            tituloEleitor=JOptionPane.showInputDialog(null,"titulo de Eleitor","",1);
-        
-            existencia=Eleitor.verifica(nomeEleitor, tituloEleitor);
+                existencia=Eleitor.verifica(nomeEleitor, tituloEleitor);
+                tela=false;
+            }
             
           
 
-            if(existencia==false){
+            if(existencia==false&&tela==false){
                JOptionPane.showMessageDialog(null,"Eleitor Inexistente","",1);
-             }else{
+             }else if(tela==false){
             
                    sit=Eleitor.situacao(nomeEleitor,tituloEleitor);
             
@@ -120,30 +143,45 @@ public class votar {
                             }
                         } 
                         presidente.inicializar2(); //reseta alguns atributos da tela
+                        
+                        mesario.reset();
+                     
                      
                     }else{
                         JOptionPane.showMessageDialog(null,"Eleitor já Efetuo a Votação","",1);
                     }
         
             }
-        if(Eleitor.verificaSituacoes()==true){
-            iniciar=false;
-        }
+        
     }
     
-    int rela=JOptionPane.showConfirmDialog(null,"YES para ver relatório","Mesário",1);
-    if(rela==0){
-        telaRelatorio relatorio = new telaRelatorio();
-       
-        relatorio.votos("senador", senado.getsenador(), senado.getqVotos(), senado.getqNulo(), senado.getBranco());
-        relatorio.votos("presidente",presidente.getpresidente(),presidente.getqVotos(),presidente.getqNulo(),presidente.getBranco());
-        relatorio.votos("deputadoFe", deputadoFe.getDeputadoFe(), deputadoFe.getqVotos(), deputadoFe.getqNulo(), deputadoFe.getBranco());
-        relatorio.votos("deputadoEs",depEstadual.getDeputadoEs(),depEstadual.getqVotos(),depEstadual.getqNulo(),depEstadual.getBranco());
-        relatorio.votos("governador", governadores.getGovernador(), governadores.getqVotos(), governadores.getqNulo(), governadores.getBranco());
+    
+    relatorio.votos("senador", senado.getsenador(), senado.getqVotos(), senado.getqNulo(), senado.getBranco());
+    relatorio.votos("presidente",presidente.getpresidente(),presidente.getqVotos(),presidente.getqNulo(),presidente.getBranco());
+    relatorio.votos("deputadoFe", deputadoFe.getDeputadoFe(), deputadoFe.getqVotos(), deputadoFe.getqNulo(), deputadoFe.getBranco());
+    relatorio.votos("deputadoEs",depEstadual.getDeputadoEs(),depEstadual.getqVotos(),depEstadual.getqNulo(),depEstadual.getBranco());
+    relatorio.votos("governador", governadores.getGovernador(), governadores.getqVotos(), governadores.getqNulo(), governadores.getBranco());
 
-        
+    boolean mesaSecundaria=true;
+    
+    while(mesaSecundaria=true){
         relatorio.exibir();
-        relatorio.setVisible(true);
+        mesaSec.setVisible(true);
+        
+        if(mesaSec.getRelatorio()==true){
+           mesaSec.reset();
+           boolean rela=true;
+           while(rela==true){
+               relatorio.setVisible(true);
+               if(relatorio.getSair()==true){
+                   rela=false;
+                   
+               }
+           }
+        }
+        
     }
+   
+    
     }
 }

@@ -46,6 +46,15 @@ public class telaRelatorio extends javax.swing.JFrame {
     private int brancoDeFe=0;
     private int nuloDepFe=0;
    
+    private boolean sair=false;
+    
+    public boolean getSair(){
+        return sair;
+    }
+    
+    public void sairReset(){
+        sair=false;
+    }
     
     /*Atualizar números de votos*/
     public void votos(String cargo,String[] nomeCandidato, int[] voto, int branco,int nulo){
@@ -146,7 +155,7 @@ public class telaRelatorio extends javax.swing.JFrame {
         Roger.setText(String.valueOf(depFeVotos[1]));
         Brito.setText(String.valueOf(depFeVotos[2]));
         Ney.setText(String.valueOf(depFeVotos[3]));
-        Manoela.setText(String.valueOf(depFeVotos[4]));
+        BobMarley.setText(String.valueOf(depFeVotos[4]));
         NulosDepFe.setText(String.valueOf(nuloDepFe));
         BrancosDepFe.setText(String.valueOf(brancoDeFe));
      
@@ -914,6 +923,7 @@ public class telaRelatorio extends javax.swing.JFrame {
     private void Sair1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Sair1ActionPerformed
         // TODO add your handling code here:
         telaRelatorio.this.dispose();
+        sair=true;
     }//GEN-LAST:event_Sair1ActionPerformed
 
     /**
