@@ -8,35 +8,40 @@ package mesario;
  *
  * @author Lucas
  */
-public class mesarioPrincipal extends javax.swing.JFrame {
+public class eleitorSituacao extends javax.swing.JFrame {
     
-
-    private boolean votar=false;
     private boolean sair=false;
+ 
+    
    
     /**
      * Creates new form mesarioPrincipal
      */
     
+ 
+    
+    public void reset(){
+        sair=false;
+        painelAux.setText("");
+      
+    }
+    
     public boolean getSair(){
         return sair;
     }
-    
-    public void reset(){
-        
-        votar=false;
-       
+    public void sitEleitor(String situacao){
+         if(situacao.equals("nao existe")){
+            painelAux.setText("Eleitor não existe");
+        }else if(situacao.equals("Ja votou")){
+            painelAux.setText("Eleitor já Efetuo a Votação");
+            
+        }
     }
+     
     
-   
-
-    
-    public boolean getVotar(){
-        return votar;
-    }
-    
-    public mesarioPrincipal() {
+    public eleitorSituacao() {
         initComponents();
+       
     }
 
     /**
@@ -49,28 +54,26 @@ public class mesarioPrincipal extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        votacao = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        Relatorio = new javax.swing.JButton();
+        painelAux = new javax.swing.JLabel();
         Encerrar = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        votacao.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        votacao.setText("Liberar votação ");
-        votacao.setActionCommand("");
-        votacao.setBorder(null);
-        votacao.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        votacao.addActionListener(new java.awt.event.ActionListener() {
+        Relatorio.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        Relatorio.setBorder(null);
+        Relatorio.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        Relatorio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                votacaoActionPerformed(evt);
+                RelatorioActionPerformed(evt);
             }
         });
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Mesário");
+        painelAux.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        painelAux.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
         Encerrar.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         Encerrar.setText("Encerrar");
@@ -83,6 +86,10 @@ public class mesarioPrincipal extends javax.swing.JFrame {
             }
         });
 
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("Mesário");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -90,26 +97,32 @@ public class mesarioPrincipal extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(195, 195, 195)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 357, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(278, 278, 278)
-                        .addComponent(votacao, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(painelAux, javax.swing.GroupLayout.PREFERRED_SIZE, 540, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(37, 37, 37)
+                        .addComponent(Relatorio, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(317, 317, 317)
+                        .addGap(351, 351, 351)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 357, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(482, 482, 482)
                         .addComponent(Encerrar, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(206, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(209, 209, 209)
+                .addComponent(Relatorio)
+                .addContainerGap(212, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(42, 42, 42)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 103, Short.MAX_VALUE)
-                .addComponent(votacao)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
+                .addComponent(painelAux, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(101, 101, 101)
                 .addComponent(Encerrar)
-                .addGap(116, 116, 116))
+                .addGap(71, 71, 71))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -126,17 +139,16 @@ public class mesarioPrincipal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void votacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_votacaoActionPerformed
-            // TODO add your handling code here:
-            votar=true;
-            mesarioPrincipal.this.dispose();
-    }//GEN-LAST:event_votacaoActionPerformed
-
     private void EncerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EncerrarActionPerformed
         // TODO add your handling code here:
         sair=true;
-        mesarioPrincipal.this.dispose();
+        eleitorSituacao.this.dispose();
     }//GEN-LAST:event_EncerrarActionPerformed
+
+    private void RelatorioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RelatorioActionPerformed
+        // TODO add your handling code here:
+
+    }//GEN-LAST:event_RelatorioActionPerformed
 
     /**
      * @param args the command line arguments
@@ -155,28 +167,36 @@ public class mesarioPrincipal extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(mesarioPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(eleitorSituacao.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(mesarioPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(eleitorSituacao.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(mesarioPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(eleitorSituacao.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(mesarioPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(eleitorSituacao.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new mesarioPrincipal().setVisible(true);
+                new eleitorSituacao().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Encerrar;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton Relatorio;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JButton votacao;
+    private javax.swing.JLabel painelAux;
     // End of variables declaration//GEN-END:variables
 }

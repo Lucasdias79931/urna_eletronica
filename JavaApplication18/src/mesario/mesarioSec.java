@@ -18,19 +18,16 @@ public class mesarioSec extends javax.swing.JFrame {
      * Creates new form mesarioPrincipal
      */
     
- 
-    
-    public void reset(){
-        relatorio=false;
-       
-      
-    }
-    
     public boolean getRelatorio(){
         return relatorio;
     }
     
-  
+    public void reset(){
+        relatorio=false;
+    }
+    
+   
+     
     
     public mesarioSec() {
         initComponents();
@@ -46,7 +43,7 @@ public class mesarioSec extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        Relatorio = new javax.swing.JButton();
+        PainelSec = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         Encerrar = new javax.swing.JButton();
 
@@ -54,14 +51,14 @@ public class mesarioSec extends javax.swing.JFrame {
 
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        Relatorio.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        Relatorio.setText("Mostrar Relatório");
-        Relatorio.setActionCommand("");
-        Relatorio.setBorder(null);
-        Relatorio.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        Relatorio.addActionListener(new java.awt.event.ActionListener() {
+        PainelSec.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        PainelSec.setText("Mostrar Relatório");
+        PainelSec.setActionCommand("");
+        PainelSec.setBorder(null);
+        PainelSec.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        PainelSec.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                RelatorioActionPerformed(evt);
+                PainelSecActionPerformed(evt);
             }
         });
 
@@ -91,10 +88,10 @@ public class mesarioSec extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(262, 262, 262)
-                        .addComponent(Relatorio, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(263, 263, 263)
+                        .addComponent(PainelSec, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(312, 312, 312)
+                        .addGap(328, 328, 328)
                         .addComponent(Encerrar, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -103,9 +100,9 @@ public class mesarioSec extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(42, 42, 42)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(89, 89, 89)
-                .addComponent(Relatorio)
-                .addGap(27, 27, 27)
+                .addGap(74, 74, 74)
+                .addComponent(PainelSec)
+                .addGap(42, 42, 42)
                 .addComponent(Encerrar)
                 .addContainerGap(121, Short.MAX_VALUE))
         );
@@ -124,11 +121,11 @@ public class mesarioSec extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void RelatorioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RelatorioActionPerformed
+    private void PainelSecActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PainelSecActionPerformed
         // TODO add your handling code here:
         relatorio=true;
         mesarioSec.this.dispose();
-    }//GEN-LAST:event_RelatorioActionPerformed
+    }//GEN-LAST:event_PainelSecActionPerformed
 
     private void EncerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EncerrarActionPerformed
         // TODO add your handling code here:
@@ -173,7 +170,7 @@ public class mesarioSec extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Encerrar;
-    private javax.swing.JButton Relatorio;
+    private javax.swing.JButton PainelSec;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables

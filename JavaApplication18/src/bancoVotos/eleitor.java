@@ -16,11 +16,7 @@ public class eleitor {
     private boolean[] situacao = new boolean[5];
 
     public eleitor(){
-        nomeEleitor[0]="Lucas";
-        nomeEleitor[1]="Ben";
-        nomeEleitor[2]="Cauan";
-        nomeEleitor[3]="Gustavo";
-        nomeEleitor[4]="Luiz";
+        
         
         tituloEleitor[0]="123456789101";
         tituloEleitor[1]="516846513215";
@@ -35,10 +31,10 @@ public class eleitor {
       
     }
     
-    public boolean verifica(String nome,String titulo){
+    public boolean verifica(String titulo){
        boolean test=false;
         for(int i=0;i<5;i++){
-            if(nome.equals(nomeEleitor[i])&&titulo.equals(tituloEleitor[i])){
+            if(titulo.equals(tituloEleitor[i])){
                 
                 test=true;
             }
@@ -46,20 +42,20 @@ public class eleitor {
         return test;
     }
     
-    public void validarVotacao(String nome){
+    public void validarVotacao(String titulo){
         for(int i=0;i<5;i++){
-            if(nome.equals(nomeEleitor[i])){
+            if(titulo.equals(tituloEleitor[i])){
                 situacao[i]=true;
             }
         }
     }
     //verificar se o eleitor já votou
-    public boolean situacao(String nome,String titulo){
+    public boolean situacao(String titulo){
        
         boolean test=false;
         
         for(int i=0;i<5;i++){
-            if((nome.equals(nomeEleitor[i]))&&(titulo.equals(tituloEleitor[i]))){
+            if(titulo.equals(tituloEleitor[i])){
                 test=situacao[i];
             }
         }

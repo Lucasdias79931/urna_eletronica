@@ -7,14 +7,17 @@ package votacao;
 import mesario.mesarioPrincipal;
 import mesario.inserirDados;
 import mesario.mesarioSec;
+import mesario.eleitorSituacao;
+
 import bancoVotos.eleitor;
+import bancoVotos.telaRelatorio;
+
 import telas.depFe;
 import telas.Presidente;
 import telas.Governadores;
 import telas.depEstadual;
 import telas.Senador;
-import bancoVotos.telaRelatorio;
-import javax.swing.JOptionPane;
+
 
 /**
  *
@@ -33,10 +36,11 @@ public class votar {
         
         telaRelatorio relatorio = new telaRelatorio();
         mesarioPrincipal mesario = new mesarioPrincipal();
+        eleitorSituacao eleitorSit = new eleitorSituacao();
         mesarioSec mesaSec = new mesarioSec();
+        inserirDados dadosEleitor = new inserirDados();
         
         boolean existencia=false;//verifica a existência do Eleitor
-        String nomeEleitor="";  //Nome do eleitor
         String tituloEleitor=""; //Titulo de Eleitor
         boolean sit=false; //Verifica se o Eleitor já votou
         
@@ -45,52 +49,70 @@ public class votar {
           
            
         
-        boolean iniciar=true;
-       
-        while(iniciar==true){
+        boolean iniciarPrincipal=true;
+        
+        
+        while(iniciarPrincipal==true){
             
-         
+            boolean iniciarSec=false;
             boolean tela=true;
               
-            while(tela=true){
+            while(tela==true){
                 mesario.setVisible(true);
                 
                 if(mesario.getSair()==true){
-                    iniciar=false;
-                    break;
+                    iniciarPrincipal=false;
+                    tela=false;
                 }
                 
                 if(mesario.getVotar()==true){
-                   break;
+                   tela=false;
+                   iniciarSec=true;
                 }
                 
                 
             }
-           
+            mesario.reset();
             tela=true;
             
-             while(tela==true&&mesario.getSair()==false){
-                nomeEleitor=JOptionPane.showInputDialog(null,"Nome do Eleitor","",1);
-                tituloEleitor=JOptionPane.showInputDialog(null,"titulo de Eleitor","",1);
-        
-                existencia=Eleitor.verifica(nomeEleitor, tituloEleitor);
-                tela=false;
+             while(tela==true&&iniciarSec==true){
+                
+                while(tela==true){
+                    dadosEleitor.setVisible(true);
+                    if(dadosEleitor.getFinalizar()==true){
+                        tela=false;
+                    }
+                }
+                tituloEleitor=dadosEleitor.getTitulo();
+                existencia=Eleitor.verifica(tituloEleitor);
+                
             }
+             dadosEleitor.resetarTela();
+             tela=true;
             
           
 
-            if(existencia==false&&tela==false){
-               JOptionPane.showMessageDialog(null,"Eleitor Inexistente","",1);
-             }else if(tela==false){
+            if(existencia==false&&iniciarSec==true){
+               eleitorSit.sitEleitor("nao existe");
+               while(tela==true){
+                   eleitorSit.setVisible(true);
+                   if(eleitorSit.getSair()==true){
+                       tela=false;
+                       
+                   }
+               }
+               eleitorSit.reset();
+               tela=false;
+             }else if(existencia==true&&iniciarSec==true){
             
-                   sit=Eleitor.situacao(nomeEleitor,tituloEleitor);
+                   sit=Eleitor.situacao(tituloEleitor);
             
                     if(sit==false){
                       /*Confirma se o eleitor realizou a votação 
                         e portanto não poderar repetir a votação
                         futuramente
                         */ 
-                      Eleitor.validarVotacao(nomeEleitor);
+                      Eleitor.validarVotacao(tituloEleitor);
                       
                       /*voto para senador*/
                         while(tela==true){
@@ -148,7 +170,15 @@ public class votar {
                      
                      
                     }else{
-                        JOptionPane.showMessageDialog(null,"Eleitor já Efetuo a Votação","",1);
+                        eleitorSit.sitEleitor("Ja votou");
+                        while(tela==true){
+                           eleitorSit.setVisible(true);
+                            if(eleitorSit.getSair()==true){
+                              tela=false;
+                             }
+                        }
+                         eleitorSit.reset();
+                         tela=true;
                     }
         
             }
@@ -163,21 +193,23 @@ public class votar {
     relatorio.votos("governador", governadores.getGovernador(), governadores.getqVotos(), governadores.getqNulo(), governadores.getBranco());
 
     boolean mesaSecundaria=true;
-    
-    while(mesaSecundaria=true){
-        relatorio.exibir();
+   
+    while(mesaSecundaria==true){
+        relatorio.exibir(); //Atualiza a tela de relatório
+        relatorio.sairReset();
         mesaSec.setVisible(true);
         
         if(mesaSec.getRelatorio()==true){
-           mesaSec.reset();
-           boolean rela=true;
+            mesaSec.reset();
+            boolean rela=true;
            while(rela==true){
                relatorio.setVisible(true);
                if(relatorio.getSair()==true){
                    rela=false;
-                   
+                  
                }
            }
+           
         }
         
     }

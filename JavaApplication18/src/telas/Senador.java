@@ -11,6 +11,7 @@ public class Senador extends javax.swing.JFrame {
     private  final int[] num={110,120,130,140,150};
     private  int[] qVotos=new int[5];
     
+    
   
     
    
@@ -708,8 +709,8 @@ public class Senador extends javax.swing.JFrame {
 
     private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
         // TODO add your handling code here:
-       
-        
+     
+    
         
         if(auxBranco==false){
             if(!(num1.getText().equals(""))&&!(num2.getText().equals(""))&&!(num3.getText().equals(""))){

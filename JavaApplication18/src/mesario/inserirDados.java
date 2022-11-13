@@ -10,9 +10,26 @@ package mesario;
  */
 public class inserirDados extends javax.swing.JFrame {
 
-    /**
-     * Creates new form mesarioPrincipal
-     */
+    private String auxTitulo="";
+    private boolean finalizar=false;
+   
+    
+    /*---------------------------------Métodos-----------------------------*/
+    public boolean getFinalizar(){
+        return finalizar;
+    }
+    public void resetarTela(){
+        auxTitulo="";
+        DadosCand.setText(auxTitulo); 
+        PainelAux.setText("");
+        finalizar=false;
+      
+    }
+    
+    public String getTitulo(){
+        return auxTitulo;
+    }
+    
     public inserirDados() {
         initComponents();
     }
@@ -27,7 +44,7 @@ public class inserirDados extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel2 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
+        b1 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
@@ -41,18 +58,19 @@ public class inserirDados extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         DadosCand = new javax.swing.JLabel();
+        PainelAux = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel2.setBackground(new java.awt.Color(0, 0, 0));
 
-        jButton1.setBackground(new java.awt.Color(0, 0, 0));
-        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("1");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        b1.setBackground(new java.awt.Color(0, 0, 0));
+        b1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        b1.setForeground(new java.awt.Color(255, 255, 255));
+        b1.setText("1");
+        b1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                b1ActionPerformed(evt);
             }
         });
 
@@ -178,7 +196,7 @@ public class inserirDados extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(b1, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
@@ -201,9 +219,9 @@ public class inserirDados extends javax.swing.JFrame {
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap(43, Short.MAX_VALUE)
+                .addContainerGap(19, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(b1, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
@@ -226,6 +244,7 @@ public class inserirDados extends javax.swing.JFrame {
         );
 
         DadosCand.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        DadosCand.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         DadosCand.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -238,7 +257,10 @@ public class inserirDados extends javax.swing.JFrame {
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(DadosCand, javax.swing.GroupLayout.DEFAULT_SIZE, 56, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(DadosCand, javax.swing.GroupLayout.DEFAULT_SIZE, 56, Short.MAX_VALUE)
+                .addGap(14, 14, 14))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -249,13 +271,19 @@ public class inserirDados extends javax.swing.JFrame {
                 .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(199, 199, 199)
+                .addComponent(PainelAux, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(18, 18, 18)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(PainelAux)
+                .addGap(18, 18, 18)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -263,53 +291,136 @@ public class inserirDados extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void b1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b1ActionPerformed
        
-    }//GEN-LAST:event_jButton1ActionPerformed
+            if(auxTitulo.length()<12){
+                auxTitulo+="1";
+                DadosCand.setText(auxTitulo);  
+            }else{
+                PainelAux.setText("Número máximo atingido!");
+            }
+       
+        
+    }//GEN-LAST:event_b1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+         
+            if(auxTitulo.length()<12){
+                auxTitulo+="3";
+                DadosCand.setText(auxTitulo);  
+            }else{
+                PainelAux.setText("Número máximo atingido!");
+            }
       
+        
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+     
+            if(auxTitulo.length()<12){
+                auxTitulo+="4";
+                DadosCand.setText(auxTitulo);  
+            }else{
+                PainelAux.setText("Número máximo atingido!");
+            }
+        
         
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        
+            if(auxTitulo.length()<12){
+                auxTitulo+="5";
+                DadosCand.setText(auxTitulo);  
+            }else{
+                PainelAux.setText("Número máximo atingido!");
+            }
        
+        
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+      
+            if(auxTitulo.length()<12){
+                auxTitulo+="6";
+                DadosCand.setText(auxTitulo);  
+            }else{
+                PainelAux.setText("Número máximo atingido!");
+            }
+      
+     
         
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-       
+      
+            if(auxTitulo.length()<12){
+                auxTitulo+="7";
+                DadosCand.setText(auxTitulo);  
+            }else{
+                PainelAux.setText("Número máximo atingido!");
+            }
+        
+        
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
       
+            if(auxTitulo.length()<12){
+                auxTitulo+="0";
+                DadosCand.setText(auxTitulo);  
+            }else{
+                PainelAux.setText("Número máximo atingido!");
+            }
+       
+        
     }//GEN-LAST:event_jButton8ActionPerformed
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
       
+            if(auxTitulo.length()<12){
+                auxTitulo+="9";
+                DadosCand.setText(auxTitulo);  
+            }else{
+                PainelAux.setText("Número máximo atingido!");
+            }
+      
+        
     }//GEN-LAST:event_jButton9ActionPerformed
 
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
-      
+        
+            if(auxTitulo.length()<12){
+                auxTitulo+="8";
+                DadosCand.setText(auxTitulo);  
+            }else{
+                PainelAux.setText("Número máximo atingido!");
+            }
+       
+        
     }//GEN-LAST:event_jButton10ActionPerformed
 
     private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
-      
+    resetarTela();
     }//GEN-LAST:event_jButton12ActionPerformed
 
     private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
-     
-
+         if(auxTitulo.length()==12){
+               inserirDados.this.dispose();
+               finalizar=true;
+           }
     }//GEN-LAST:event_jButton13ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-      
+     
+            if(auxTitulo.length()<12){
+                auxTitulo+="2";
+                DadosCand.setText(auxTitulo);  
+            }else{
+                PainelAux.setText("Número máximo atingido!");
+            }
+       
+        
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
@@ -350,7 +461,8 @@ public class inserirDados extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel DadosCand;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JLabel PainelAux;
+    private javax.swing.JButton b1;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton12;
     private javax.swing.JButton jButton13;
