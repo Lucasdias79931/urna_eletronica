@@ -186,11 +186,11 @@ public class votar {
     }
     
     
-    relatorio.votos("senador", senado.getsenador(), senado.getqVotos(), senado.getqNulo(), senado.getBranco());
-    relatorio.votos("presidente",presidente.getpresidente(),presidente.getqVotos(),presidente.getqNulo(),presidente.getBranco());
-    relatorio.votos("deputadoFe", deputadoFe.getDeputadoFe(), deputadoFe.getqVotos(), deputadoFe.getqNulo(), deputadoFe.getBranco());
-    relatorio.votos("deputadoEs",depEstadual.getDeputadoEs(),depEstadual.getqVotos(),depEstadual.getqNulo(),depEstadual.getBranco());
-    relatorio.votos("governador", governadores.getGovernador(), governadores.getqVotos(), governadores.getqNulo(), governadores.getBranco());
+    relatorio.votos("senador", senado.getsenador(), senado.getqVotos(), senado.getBranco(),senado.getqNulo());
+    relatorio.votos("presidente",presidente.getpresidente(),presidente.getqVotos(),presidente.getBranco(),presidente.getqNulo());
+    relatorio.votos("deputadoFe", deputadoFe.getDeputadoFe(), deputadoFe.getqVotos(), deputadoFe.getBranco(), deputadoFe.getqNulo());
+    relatorio.votos("deputadoEs",depEstadual.getDeputadoEs(),depEstadual.getqVotos(),depEstadual.getBranco(),depEstadual.getqNulo());
+    relatorio.votos("governador", governadores.getGovernador(), governadores.getqVotos(), governadores.getBranco(), governadores.getqNulo());
 
     boolean mesaSecundaria=true;
    

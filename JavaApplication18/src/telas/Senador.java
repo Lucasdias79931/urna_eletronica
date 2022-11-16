@@ -1,5 +1,6 @@
 package telas;
 
+import som.somUrna;
 import javax.swing.JOptionPane;
 
 
@@ -709,7 +710,7 @@ public class Senador extends javax.swing.JFrame {
 
     private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
         // TODO add your handling code here:
-     
+        somUrna som = new somUrna();
     
         
         if(auxBranco==false){
@@ -718,7 +719,7 @@ public class Senador extends javax.swing.JFrame {
                 int a=Integer.valueOf(num1.getText()+num2.getText()+num3.getText());
                 validacao(a);
                 concluir=1;
-                
+                som.Play("SomUrna1");
                 Senador.this.dispose();
                 
             }
@@ -726,12 +727,13 @@ public class Senador extends javax.swing.JFrame {
         }else{
            validaBranco(auxBranco);
            concluir=1;
-         
+          
+           som.Play("SomUrna1");
            Senador.this.dispose();
          
         }
         
-        
+      
         
         
         
@@ -1126,8 +1128,10 @@ if(!(num1.getText().equals(""))&&!(num2.getText().equals(""))&&partido==false){
 
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
         // TODO add your handling code here:
+        
         auxBranco=true;
         AUX.setText("VOTO BRANCO");
+        
     }//GEN-LAST:event_jButton11ActionPerformed
 
     /**

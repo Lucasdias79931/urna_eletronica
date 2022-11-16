@@ -1,5 +1,6 @@
 package telas;
 
+import som.somUrna;
 import javax.swing.JOptionPane;
 
 /*
@@ -21,7 +22,7 @@ public class depEstadual extends javax.swing.JFrame {
      
     //nome e número dos partidos
     private  String [] nomepartido = {"Verde","Azul","Amarelo","Preto","Rosa"}; 
-    private int[] numpartido =new int[5];
+    private  final int[] numpartido ={11,12,13,14,15};
    
      //variável auxiliar para verificar o número do partido
     private boolean partido=false;
@@ -601,11 +602,12 @@ public class depEstadual extends javax.swing.JFrame {
         
         if(!(num1.getText().equals(""))&&!(num2.getText().equals(""))&&partido==false){
             String b=num1.getText()+num2.getText();
-           
+          
             for(int i=0;i<5;i++){
                 if(b.equals(String.valueOf(numpartido[i]))){
                     Partido.setText("Partido:");
                     nomePartido.setText(nomepartido[i]);
+                 
                     partido=true;
                 }
             }
@@ -760,14 +762,18 @@ public class depEstadual extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
+
         // TODO add your handling code here:
+        
+        somUrna som = new somUrna();
+        
         if(auxBranco==false){
             if(!(num1.getText().equals(""))&&!(num2.getText().equals(""))&&!(num3.getText().equals(""))&&!(num4.getText().equals(""))&&!(num5.getText().equals(""))){
                 
                 int a=Integer.valueOf(num1.getText()+num2.getText()+num3.getText()+num4.getText()+num5.getText());
                 validacao(a);
                 concluir=1;
-                
+                som.Play("SomUrna1");
                 depEstadual.this.dispose();
                 
             }
@@ -775,7 +781,7 @@ public class depEstadual extends javax.swing.JFrame {
         }else{
            validaBranco(auxBranco);
            concluir=1;
-         
+           som.Play("SomUrna1");
            depEstadual.this.dispose();
          
         }

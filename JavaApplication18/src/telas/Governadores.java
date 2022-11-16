@@ -1,5 +1,6 @@
 package telas;
 
+import som.somUrna;
 import javax.swing.JOptionPane;
 
 /*
@@ -20,7 +21,7 @@ public class Governadores extends javax.swing.JFrame {
     
     //nome e número dos partidos
     private  String [] nomepartido = {"Verde","Azul","Amarelo","Preto","Rosa"}; 
-    private int[] numpartido =new int[5];
+    private  final int[] numpartido ={11,12,13,14,15};
    
      //variável auxiliar para verificar o número do partido
     private boolean partido=false;
@@ -711,7 +712,7 @@ public class Governadores extends javax.swing.JFrame {
 
     private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
         // TODO add your handling code here:
-        
+        somUrna som = new somUrna();
       
          if(auxBranco==false){
             if(!(num1.getText().equals(""))&&!(num2.getText().equals(""))){
@@ -719,7 +720,7 @@ public class Governadores extends javax.swing.JFrame {
                 int a=Integer.valueOf(num1.getText()+num2.getText());
                 validacao(a);
                 concluir=1;
-                
+                som.Play("SomUrna1");
                 Governadores.this.dispose();
                 
             }
@@ -727,7 +728,7 @@ public class Governadores extends javax.swing.JFrame {
         }else{
            validaBranco(auxBranco);
            concluir=1;
-         
+           som.Play("SomUrna1");
            Governadores.this.dispose();
          
         }

@@ -1,4 +1,8 @@
 package telas;
+import som.somUrna;
+import java.net.URL;
+import java.applet.Applet;
+import java.applet.AudioClip;
 
 import javax.swing.JOptionPane;
 
@@ -12,7 +16,7 @@ public class Presidente extends javax.swing.JFrame {
     
     //nome e número dos partidos
     private  String [] nomepartido = {"Verde","Azul","Amarelo","Preto","Rosa"}; 
-    private int[] numpartido =new int[5];
+    private  final int[] numpartido ={11,12,13,14,15};
    
      //variável auxiliar para verificar o número do partido
     private boolean partido=false;
@@ -149,7 +153,8 @@ public class Presidente extends javax.swing.JFrame {
         return concluir;
     }
   
-    
+   
+       
      public Presidente() {
         initComponents();
         inicializar();
@@ -705,7 +710,7 @@ public class Presidente extends javax.swing.JFrame {
 
     private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
         // TODO add your handling code here:
-        
+        somUrna som = new somUrna();
         
         if(auxBranco==false){
             if(!(num1.getText().equals(""))&&!(num2.getText().equals(""))){
@@ -713,15 +718,15 @@ public class Presidente extends javax.swing.JFrame {
                 int a=Integer.valueOf(num1.getText()+num2.getText());
                 validacao(a);
                 concluir=1;
-                
+                som.Play("SomUrna1");
                 Presidente.this.dispose();
-                
+                 
             }
-        
+             
         }else{
            validaBranco(auxBranco);
            concluir=1;
-         
+           som.Play("SomUrna1");
            Presidente.this.dispose();
          
         }
@@ -730,6 +735,8 @@ public class Presidente extends javax.swing.JFrame {
          
     }//GEN-LAST:event_jButton13ActionPerformed
 
+ 
+    
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
         if(aux==0){
@@ -779,6 +786,8 @@ public class Presidente extends javax.swing.JFrame {
                     AUX.setText("Voto Nulo");
                 }
         }
+        
+        
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
@@ -1105,8 +1114,8 @@ public class Presidente extends javax.swing.JFrame {
 
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
         // TODO add your handling code here:
-        boolean aux=true;
-        validaBranco(aux);
+       
+        auxBranco=true;
         AUX.setText("VOTO BRANCO");
     }//GEN-LAST:event_jButton11ActionPerformed
 
